@@ -77,7 +77,7 @@ class Demo(object):
         # 依次将取到的 average price $xxxx 数量去掉$后添加到一个列表中
         for element in price_ele_list:
             span_text = element.find_element(By.TAG_NAME, "h5").find_element(By.XPATH, "./*[2]").text.lstrip("$")
-            price_list.append(int(float(span_text)))
+            price_list.append(round(float(span_text), 2))
         print(f"升序排列前的price列表：{price_list}")
         if price_list == sorted(price_list, reverse=False):
             print(f"price的列表和升序排列后的列表一致，所以price是由底到高排序")
