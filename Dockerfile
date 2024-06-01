@@ -1,5 +1,5 @@
 # 使用Python基础镜像
-FROM python:3.7-slim
+FROM python:3.9-slim
 
 # 安装Python包管理工具和依赖
 RUN apt-get update && apt-get install -y \
