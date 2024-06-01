@@ -1,4 +1,5 @@
 # -- coding: utf-8 --
+import sys
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -31,6 +32,8 @@ class Demo(object):
         """
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        if sys.platform.startswith("Linux".lower()):
+            options.add_argument("--headless")
         self.driver = webdriver.Chrome(options=options)
         self.driver.maximize_window()
         self.driver.get("https://dev-squarelocal.codeless-universe.com")
