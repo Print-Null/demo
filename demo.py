@@ -32,6 +32,9 @@ class Demo(object):
         """
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--disable-dev-shm-usage')
         platform = sys.platform
         print(f"当前系统平台：{platform}")
         if platform.startswith("Linux".lower()):
