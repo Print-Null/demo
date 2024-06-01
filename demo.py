@@ -32,7 +32,9 @@ class Demo(object):
         """
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
-        if sys.platform.startswith("Linux".lower()):
+        platform = sys.platform
+        print(f"当前系统平台：{platform}")
+        if platform.startswith("Linux".lower()):
             options.add_argument("--headless")
         self.driver = webdriver.Chrome(options=options)
         self.driver.maximize_window()
