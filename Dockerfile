@@ -28,4 +28,4 @@ COPY . /app
 WORKDIR /app
 
 # 运行测试脚本
-CMD ["pytest -vs", "test_demo.py"]
+CMD ["pytest", "-vs", "test_demo.py"]
