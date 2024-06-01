@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y google-chrome-stable
 RUN wget -O /tmp/chromedriver.zip https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip && \
     unzip /tmp/chromedriver.zip -d /usr/local/bin/
 
+# 将 ChromeDriver 添加到环境变量中
+ENV PATH="/usr/local/bin:${PATH}"
+
 # 安装Python依赖包
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
