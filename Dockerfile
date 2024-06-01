@@ -18,7 +18,7 @@ RUN wget -O /tmp/chromedriver.zip https://storage.googleapis.com/chrome-for-test
     unzip /tmp/chromedriver.zip -d /usr/local/bin/
 
 # 将 ChromeDriver 添加到环境变量中
-ENV PATH="/usr/local/bin:${PATH}"
+ENV PATH="/usr/local/bin/chromedriver-linux64:${PATH}"
 
 # 安装Python依赖包
 COPY requirements.txt /app/requirements.txt
